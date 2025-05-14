@@ -45,6 +45,7 @@ import tensorflow_probability as tfp
 preprocess_resnet_v2 = tf.keras.applications.inception_resnet_v2.preprocess_input
 preprocess_v3 = tf.keras.applications.inception_v3.preprocess_input
 preprocess_vgg16 = tf.keras.applications.vgg16.preprocess_input
+preprocess_convnext = tf.keras.applications.convnext.preprocess_input
 
 # Utils
 def cosine_similarity(vec1, vec2):
@@ -1253,6 +1254,10 @@ class KerasModelWrapper():
 				# InceptionV3
 				elif self.model_name == 'inception_v3':
 					if 'mixed' in layer.name:
+						self.layer_tensors[layer.name] = layer.output
+				# ConvNext
+				elif self.model_name == 'convnext_tiny':
+					if 'add_' in layer.name:
 						self.layer_tensors[layer.name] = layer.output
 				else:
 					self.layer_tensors[layer.name] = layer.output

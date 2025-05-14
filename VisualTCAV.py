@@ -1256,7 +1256,7 @@ class KerasModelWrapper():
 					if 'mixed' in layer.name:
 						self.layer_tensors[layer.name] = layer.output
 				# ConvNext
-				elif self.model_name == 'convnext_tiny':
+				elif 'convnext' in self.model_name:
 					if 'add_' in layer.name:
 						self.layer_tensors[layer.name] = layer.output
 				else:

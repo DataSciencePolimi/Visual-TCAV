@@ -47,7 +47,7 @@ visual_tcav_models_dir_path = path.join(visual_tcav_dir_path, "models")
 visual_tcav_models_inception_dir_path = path.join(visual_tcav_models_dir_path, "InceptionV3")
 visual_tcav_models_resnet_dir_path = path.join(visual_tcav_models_dir_path, "ResNet50V2")
 visual_tcav_models_vgg_dir_path = path.join(visual_tcav_models_dir_path, "VGG16")
-visual_tcav_models_convnext_dir_path = path.join(visual_tcav_models_dir_path, "ConvNeXtTiny")
+visual_tcav_models_convnext_dir_path = path.join(visual_tcav_models_dir_path, "ConvNeXt")
 
 visual_tcav_test_images_dir_path = path.join(visual_tcav_dir_path, "test_images")
 
@@ -104,10 +104,10 @@ if __name__ == "__main__":
 		vgg_classes_file.write(cl[1] + "\n")
 	vgg_classes_file.close()
 
-	convnext = keras.applications.ConvNeXtTiny(include_top=True, include_preprocessing=False, weights="imagenet", input_tensor=None, input_shape=None, pooling=None, classes=1000, classifier_activation="softmax")
+	convnext = keras.applications.ConvNeXtBase(include_top=True, include_preprocessing=False, weights="imagenet", input_tensor=None, input_shape=None, pooling=None, classes=1000, classifier_activation="softmax")
 	convnext.compile(loss='mse')
-	convnext.save(path.join(visual_tcav_models_convnext_dir_path, "ConvNeXtTiny-architecture-and-weights-compiled"))
-	convnext_classes_file = open(path.join(visual_tcav_models_convnext_dir_path, "ConvNeXtTiny-imagenet-classes.txt"), "w")
+	convnext.save(path.join(visual_tcav_models_convnext_dir_path, "ConvNeXt-architecture-and-weights-compiled"))
+	convnext_classes_file = open(path.join(visual_tcav_models_convnext_dir_path, "ConvNeXt-imagenet-classes.txt"), "w")
 	for cl in keras.applications.convnext.decode_predictions(np.array([[i for i in range(1000)]]), 1000)[0][::-1]:
 		convnext_classes_file.write(cl[1] + "\n")
 	convnext_classes_file.close()

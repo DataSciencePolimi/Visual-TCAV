@@ -47,6 +47,7 @@ visual_tcav_models_dir_path = path.join(visual_tcav_dir_path, "models")
 visual_tcav_models_inception_dir_path = path.join(visual_tcav_models_dir_path, "InceptionV3")
 visual_tcav_models_resnet_dir_path = path.join(visual_tcav_models_dir_path, "ResNet50V2")
 visual_tcav_models_vgg_dir_path = path.join(visual_tcav_models_dir_path, "VGG16")
+visual_tcav_models_convnext_dir_path = path.join(visual_tcav_models_dir_path, "ConvNeXtTiny")
 
 visual_tcav_test_images_dir_path = path.join(visual_tcav_dir_path, "test_images")
 
@@ -102,6 +103,14 @@ if __name__ == "__main__":
 	for cl in keras.applications.vgg16.decode_predictions(np.array([[i for i in range(1000)]]), 1000)[0][::-1]:
 		vgg_classes_file.write(cl[1] + "\n")
 	vgg_classes_file.close()
+
+	convnext = keras.applications.ConvNeXtTiny(include_top=True, include_preprocessing=False, weights="imagenet", input_tensor=None, input_shape=None, pooling=None, classes=1000, classifier_activation="softmax")
+	convnext.compile(loss='mse')
+	convnext.save(path.join(visual_tcav_models_convnext_dir_path, "ConvNeXtTiny-architecture-and-weights-compiled"))
+	convnext_classes_file = open(path.join(visual_tcav_models_convnext_dir_path, "ConvNeXtTiny-imagenet-classes.txt"), "w")
+	for cl in keras.applications.convnext.decode_predictions(np.array([[i for i in range(1000)]]), 1000)[0][::-1]:
+		convnext_classes_file.write(cl[1] + "\n")
+	convnext_classes_file.close()
 
 	print("Done!")
 
@@ -241,7 +250,7 @@ def get_first_image_of_class(code):
 		urls_to_scrape = [url.decode('utf-8') for url in response.content.splitlines()]
 	except:
 		return False
-	print(len(urls_to_scrape))
+	#print(len(urls_to_scrape))
 	from random import shuffle
 	shuffle(urls_to_scrape)
 	count = 0

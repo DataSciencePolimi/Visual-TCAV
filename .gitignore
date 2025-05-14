@@ -172,3 +172,13 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+*.jpg
+*.png
+*.jpeg
+*.tar.gz
+*.joblib
+*.txt
+*.pb
+*.data-00000-of-00001
+*.index
+*.h5

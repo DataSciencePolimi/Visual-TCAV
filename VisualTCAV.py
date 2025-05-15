@@ -1125,7 +1125,10 @@ class KerasModelWrapper():
 		self.batch_size = batch_size
 
 		# Load model
-		self.model = tf.keras.models.load_model(model_path)
+		if os.path.exists(model_path):
+			self.model = tf.keras.models.load_model(model_path)
+		else:
+			self.model = tf.keras.models.load_model(os.path.splitext(model_path)[0]) # Strip ".keras" extension
 		# Fetch tensors
 		self._get_layer_tensors()
 		# Load labels

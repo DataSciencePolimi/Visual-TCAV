@@ -4,7 +4,7 @@ from typing import Callable, List, Optional
 import yaml
 from pydantic import BaseModel, field_validator, Field
 
-from src.generative_cav.framework.VisualTCAV import Model
+from src.visual_tcav.framework.VisualTCAV import Model
 
 
 class ImputationTask(BaseModel):

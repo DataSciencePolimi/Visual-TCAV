@@ -3,7 +3,7 @@ from pathlib import Path
 
 import openai
 
-from src.generative_cav.loggers import save_images
+from src.loggers import save_images
 
 # Input and output folders
 input_dir = Path("data/test_images/zebra")

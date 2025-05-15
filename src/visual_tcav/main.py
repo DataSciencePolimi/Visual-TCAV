@@ -2,9 +2,9 @@ import argparse
 
 from config_loader import load_config
 
-from src.generative_cav.framework.run_visual_tcav import (
+from src.visual_tcav.framework.run_visual_tcav import (
     run_global_visual_tcav, run_local_visual_tcav)
-from src.generative_cav.loggers import LOGGER
+from src.loggers import LOGGER
 
 
 def run_all_tcavs(object_class, concept_group, model):

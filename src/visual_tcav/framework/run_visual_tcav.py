@@ -1,5 +1,5 @@
-from src.generative_cav.loggers import LOGGER
-from src.generative_cav.framework.VisualTCAV import (GlobalVisualTCAV,
+from src.loggers import LOGGER
+from src.visual_tcav.framework.VisualTCAV import (GlobalVisualTCAV,
                                                      LocalVisualTCAV,
                                                      cosine_similarity)
 

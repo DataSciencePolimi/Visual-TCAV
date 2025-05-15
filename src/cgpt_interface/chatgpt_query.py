@@ -1,7 +1,7 @@
 import base64
 
 import openai
-from path import save_images
+from src.loggers import save_images
 
 # Prompts
 positive_prompt = """

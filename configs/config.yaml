@@ -1,0 +1,107 @@
+classes:
+  - name: zebra
+    example_image: zebra.jpg
+    concepts_groups:
+      - true_label: striped_original
+        generated:
+          - striped_flux
+          - striped_sd35
+          - striped_cgpt
+          - striped_cgpt_with_zebra_parts
+          - random
+        concept_imputation:
+          example: unstriped_zebra.png
+          folder: zebra_unstriped
+      - true_label: dotted
+        generated:
+          # generate some concepts
+          - random
+        concept_imputation:
+          example: unstriped_zebra.png
+          folder: zebra_unstriped
+      - true_label: zigzagged
+        generated:
+          # generate some concepts
+          - random
+        concept_imputation:
+          example: unstriped_zebra.png
+          folder: zebra_unstriped
+      - true_label: chequered
+        generated:
+          # generate some concepts
+          - random
+        concept_imputation:
+          example: unstriped_zebra.png
+          folder: zebra_unstriped
+  - name: dalmatian
+    example_image: dalmatian.jpg
+    concepts_groups:
+      - true_label: spotted
+        generated:
+          # generate some concepts
+          - random
+      - true_label: dotted
+        generated:
+          # generate some concepts
+          - random
+      - true_label: zigzagged
+        generated:
+          # generate some concepts
+          - random
+      - true_label: chequered
+        generated:
+          # generate some concepts
+          - random
+      - true_label: striped
+        generated:
+          # generate some concepts
+          - random
+
+models:
+  - name: ResNet50V2
+    graph_path_filename: ResNet50V2-architecture-and-weights-compiled.h5
+    label_path_filename: ResNet50V2-imagenet-classes.txt
+    preprocessing_function: tensorflow.keras.applications.resnet_v2.preprocess_input
+    max_examples: 500
+    layers:
+      - "conv4_block3_out"
+      - "conv4_block4_out"
+      - "conv4_block5_out"
+      - "conv4_block6_out"
+      - "conv5_block1_out"
+      - "conv5_block2_out"
+      - "conv5_block3_out"
+  - name: VGG16
+    graph_path_filename: VGG16-architecture-and-weights-compiled.h5
+    label_path_filename: VGG16-imagenet-classes.txt
+    preprocessing_function: tensorflow.keras.applications.vgg16.preprocess_input
+    max_examples: 500
+    layers:
+      - "block3_conv3"
+      - "block4_conv1"
+      - "block4_conv2"
+      - "block4_conv3"
+      - "block5_conv1"
+      - "block5_conv2"
+      - "block5_conv3"
+  - name: InceptionV3
+    graph_path_filename: InceptionV3-architecture-and-weights-compiled.h5
+    label_path_filename: InceptionV3-imagenet-classes.txt
+    preprocessing_function: tensorflow.keras.applications.inception_v3.preprocess_input
+    max_examples: 500
+    layers:
+      - "mixed4"
+      - "mixed5"
+      - "mixed6"
+      - "mixed7"
+      - "mixed8"
+      - "mixed10"
+  - name: ConvNeXtBase
+    graph_path_filename: ConvNeXtBase-architecture-and-weights-compiled.h5
+    label_path_filename: ConvNeXtBase-imagenet-classes.txt
+    preprocessing_function: tensorflow.keras.applications.convnext.preprocess_input
+    max_examples: 500
+    layers:
+      - "convnext_base_stage_3_block_0_depthwise_conv"
+      - "convnext_base_stage_3_block_1_depthwise_conv"
+      - "convnext_base_stage_3_block_2_depthwise_conv"

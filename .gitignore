@@ -182,3 +182,7 @@ cython_debug/
 *.data-00000-of-00001
 *.index
 *.h5
+data/
+VisualTCAV/
+.idea/
+outputs/

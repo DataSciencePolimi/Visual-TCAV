@@ -8,11 +8,11 @@ Welcome to the official TensorFlow V2 implementation of Visual-TCAV, a novel fra
 
 In this repository you will find all the necessary items to run the method:
 
-| File/folder        | Description                                                                    |
-|:------------------ |:------------------------------------------------------------------------------ |
-| VisualTCAV_guide.ipynb      | Detailed guide on how to install and run Visual-TCAV |
-| VisualTCAV.py | Visual-TCAV code                                           |
-| datasets_and_models_downloader        | Code and files to automatically download the datasets and the models                           |
+| File/folder                             | Description                                                                    |
+|:----------------------------------------|:------------------------------------------------------------------------------ |
+| VisualTCAV_guide.ipynb                  | Detailed guide on how to install and run Visual-TCAV |
+| src/visual_tcav/framework/VisualTCAV.py | Visual-TCAV code                                           |
+| datasets_and_models_downloader          | Code and files to automatically download the datasets and the models                           |
 
 ## Visual-TCAV: Concept-based Attribution and Saliency Maps for Post-hoc Explainability in Image Classification
 

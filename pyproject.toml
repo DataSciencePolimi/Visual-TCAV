@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "Visual-TCAV"
+version = "0.1.0"
+description = "A novel framework for post-hoc explainability in image classification"
+authors = ["DataScience Polimi  <datascience.polimi@gmail.com>"]
+readme = "README.md"
+packages=[{include="src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+prettytable = "^3.16.0"
+matplotlib = "^3.10.1"
+tensorflow = "2.15.1"
+tensorflow-probability = "0.23.0"
+tensorflow-metal = "^1.2.0"
+tf-keras = "^2.15.0"
+requests = "^2.32.3"
+openai = "^1.77.0"
+joblib = "^1.5.0"
+pydantic = "^2.11.4"
+pyyaml = "^6.0.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+isort = "^5.12.0"
+

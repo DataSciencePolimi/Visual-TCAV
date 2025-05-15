@@ -1,0 +1,19 @@
+classes:
+  - name: zebra
+    example_image: zebra.jpg
+    concepts_groups:
+      - true_label: striped_original
+        generated:
+          - striped_cgpt_with_zebra_parts
+
+models:
+  - name: ConvNeXtBase
+    graph_path_filename: ConvNeXtBase-architecture-and-weights-compiled
+    label_path_filename: ConvNeXtBase-imagenet-classes.txt
+    preprocessing_function: tensorflow.keras.applications.convnext.preprocess_input
+    max_examples: 500
+    layers:
+      - 'tf.__operators__.add_32'
+      - 'tf.__operators__.add_33'
+      - 'tf.__operators__.add_34'
+      - 'tf.__operators__.add_35'

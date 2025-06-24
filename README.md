@@ -30,7 +30,7 @@ If you find our work useful, please cite:
 @misc{visualtcav,
       title={Visual-TCAV: Concept-based Attribution and Saliency Maps for Post-hoc Explainability in Image Classification}, 
       author={Antonio De Santis and Riccardo Campi and Matteo Bianchi and Marco Brambilla},
-      year={2024},
+      year={2025},
       eprint={2411.05698},
       archivePrefix={arXiv},
       primaryClass={cs.CV},

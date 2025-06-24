@@ -88,7 +88,7 @@ if __name__ == "__main__":
 		inception_classes_file.write(cl[1] + "\n")
 	inception_classes_file.close()
 
-	tf.keras.backend.clear_session()
+	keras.backend.clear_session()
 
 	resnet = keras.applications.ResNet50V2(include_top=True, weights="imagenet", input_tensor=None, input_shape=None, pooling=None, classes=1000, classifier_activation="softmax")
 	resnet.compile(loss='mse')
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 		resnet_classes_file.write(cl[1] + "\n")
 	resnet_classes_file.close()
 
-	tf.keras.backend.clear_session()
+	keras.backend.clear_session()
 
 	vgg = keras.applications.VGG16(include_top=True, weights="imagenet", input_tensor=None, input_shape=None, pooling=None, classes=1000, classifier_activation="softmax")
 	vgg.compile(loss='mse')
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 		vgg_classes_file.write(cl[1] + "\n")
 	vgg_classes_file.close()
 
-	tf.keras.backend.clear_session()
+	keras.backend.clear_session()
 
 	convnext = keras.applications.ConvNeXtBase(include_top=True, include_preprocessing=False, weights="imagenet", input_tensor=None, input_shape=None, pooling=None, classes=1000, classifier_activation="softmax")
 	convnext.compile(loss='mse')
@@ -118,7 +118,7 @@ if __name__ == "__main__":
 		convnext_classes_file.write(cl[1] + "\n")
 	convnext_classes_file.close()
 
-	tf.keras.backend.clear_session()
+	keras.backend.clear_session()
 
 	print("Done!")
 

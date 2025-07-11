@@ -336,7 +336,7 @@ class LocalVisualTCAV(VisualTCAV):
 		self.m_steps = m_steps
 		self.target_class = target_class
 		if self.target_class is not None:
-			self.n_classes = max(min(n_classes, 3), 1)
+			self.n_classes = 1
 			self.target_class_index = self.model.model_wrapper.label_to_id(self.target_class)
 		elif not self.model.binary_classification:
 			self.n_classes = max(np.min([n_classes, len(self.model.model_wrapper.labels), 3]), 1) # Not implemented more than 3
